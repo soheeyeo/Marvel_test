@@ -3,3 +3,5 @@
 var userName = 'yeo';
 var age = 30;
 var area = 'korea';
+// 02.가장 좋아하는 곡과 가수 이름을 변수에 object 자료형으로 담아보십시오.
+var music = { title: 'View', singer: 'Shinee' };

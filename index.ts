@@ -3,3 +3,6 @@
 let userName :string = 'yeo';
 let age :number = 30;
 let area :string = 'korea';
+
+// 02.가장 좋아하는 곡과 가수 이름을 변수에 object 자료형으로 담아보십시오.
+let music :{ title: string, singer: string } = { title: 'View', singer: 'Shinee' };
