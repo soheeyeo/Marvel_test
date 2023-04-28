@@ -8,7 +8,20 @@ let area :string = 'korea';
 let music :{ title: string, singer: string } = { title: 'View', singer: 'Shinee' };
 
 // 03. 다음과 같이 생긴 자료의 타입지정을 해보도록 합시다.
-let project = {
+// let project = {
+//     member : ['kim', 'park'],
+//     days : 30,
+//     started : true,
+// }
+
+// project 변수 우측에 적으면 됩니다.
+// member 안엔 문자로 가득한 array만 들어올 수 있고
+// days는 숫자, started는 true/false만 들어올 수 있습니다.
+
+let project :{ 
+	member :string[], 
+	days :number, 
+	started :boolean} = {
     member : ['kim', 'park'],
     days : 30,
     started : true,
