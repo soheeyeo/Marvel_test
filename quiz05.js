@@ -4,3 +4,9 @@ var info = {
     phone: 123,
     email: 'abc@naver.com'
 };
+var aboutUser = {
+    name: 'kim',
+    phone: 123,
+    email: 'abc@naver.com',
+    adult: false
+};
