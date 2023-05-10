@@ -13,3 +13,11 @@ var 회원정보 = {
 };
 회원정보.plusOne(1);
 회원정보.changeName();
+var cutZero = function (a) {
+    var result = a.replace(/^0+/, "");
+    return result;
+};
+var removeDash = function (x) {
+    var result = x.replace(/-/g, "");
+    return parseFloat(result);
+};
