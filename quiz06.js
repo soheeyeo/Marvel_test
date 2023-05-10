@@ -21,3 +21,9 @@ var removeDash = function (x) {
     var result = x.replace(/-/g, "");
     return parseFloat(result);
 };
+function 만들함수(a, func1, func2) {
+    var result = func1(a);
+    var result2 = func2(result);
+    console.log(result2);
+}
+만들함수('010-1111-2222', cutZero, removeDash);
