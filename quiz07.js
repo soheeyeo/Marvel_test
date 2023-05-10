@@ -7,3 +7,18 @@ var 이미지 = document.querySelector('#image');
 if (이미지 instanceof HTMLImageElement) {
     이미지.src = 'new.jpg';
 }
+// 02. **바꾸고 싶은 html 요소가 많습니다.**
+// ```
+// <a class="naver" href="naver.com">링크</a>
+// <a class="naver" href="naver.com">링크</a>
+// <a class="naver" href="naver.com">링크</a>
+// ```
+// 3개의 링크가 있는데 이 요소들의 href 속성을 전부 https://kakao.com으로 바꾸고 싶은 겁니다.
+// 자바스크립트 코드를 어떻게 짜야할까요?
+var 링크 = document.querySelectorAll('.naver');
+for (var i = 0; i < 3; i++) {
+    var a = 링크[i];
+    if (a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com';
+    }
+}
