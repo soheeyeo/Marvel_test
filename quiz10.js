@@ -16,3 +16,8 @@ function Max() {
     return result;
 }
 console.log(Max(6, 3, 7, 2));
+function User(_a) {
+    var user = _a.user, comment = _a.comment, admin = _a.admin;
+    console.log(user, comment, admin);
+}
+User({ user: 'kim', comment: [3, 5, 4], admin: false });
