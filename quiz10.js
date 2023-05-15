@@ -21,3 +21,8 @@ function User(_a) {
     console.log(user, comment, admin);
 }
 User({ user: 'kim', comment: [3, 5, 4], admin: false });
+function 함수(_a) {
+    var a = _a[0], b = _a[1], c = _a[2];
+    console.log(a, b, c);
+}
+함수([40, 'wine', false]);
