@@ -12,13 +12,14 @@
 
 // 친구가 물어봤을 때 어떻게 답해줄 것입니까
 
-x와 y에 static 키워드가 붙었기 때문에 User.x 이런 식으로만 접근해서 쓸 수 있음. User의 자식들은 x, y 쓸 수 없음 
+// 답
+// x와 y에 static 키워드가 붙었기 때문에 User.x 이런 식으로만 접근해서 쓸 수 있음. User의 자식들은 x, y 쓸 수 없음 
 
-private static x : 부모 class{}에서만 사용 가능. 자식에게 안 물려줌
+// private static x : 부모 class{}에서만 사용 가능. 자식에게 안 물려줌
 
-public static y : class 내부 외부 상관없이 수정 가능. public 키워드 지워도 똑같이 동작 
+// public static y : class 내부 외부 상관없이 수정 가능. public 키워드 지워도 똑같이 동작 
 
-protected z : class{}에서 사용 가능. 현재 class, extends된 class 내에서 사용 가능
+// protected z : class{}에서 사용 가능. 현재 class, extends된 class 내에서 사용 가능
 
 // 02. **x 속성에 숫자를 더해주는 함수가 필요합니다.**
 
