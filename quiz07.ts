@@ -25,10 +25,10 @@ if(이미지 instanceof HTMLImageElement) {
 
 // 자바스크립트 코드를 어떻게 짜야할까요?
 
-let 링크 = document.querySelectorAll('.naver');
+let 링크2 = document.querySelectorAll('.naver');
 
 for (let i = 0; i < 3; i++){
-  let a = 링크[i];
+  let a = 링크2[i];
   if (a instanceof HTMLAnchorElement){
     a.href = 'https://kakao.com'
   }
