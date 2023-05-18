@@ -8,3 +8,9 @@ function checkFunc(x) {
 }
 checkFunc('hello');
 checkFunc(['kim', 'park']);
+function makeObj(x) {
+    return JSON.parse(x);
+}
+var data = '{"name" : "dog", "age" : 1 }';
+var a = makeObj(data);
+console.log(a);
