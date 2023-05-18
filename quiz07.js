@@ -17,8 +17,8 @@ if (이미지 instanceof HTMLImageElement) {
 // 자바스크립트 코드를 어떻게 짜야할까요?
 var 링크2 = document.querySelectorAll('.naver');
 for (var i = 0; i < 3; i++) {
-    var a = 링크2[i];
-    if (a instanceof HTMLAnchorElement) {
-        a.href = 'https://kakao.com';
+    var a_1 = 링크2[i];
+    if (a_1 instanceof HTMLAnchorElement) {
+        a_1.href = 'https://kakao.com';
     }
 }
