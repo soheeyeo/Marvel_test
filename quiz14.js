@@ -3,3 +3,4 @@
 // 쉬워서 답은 생략합니다.
 // (예시) **[ '동서녹차', 4000, true ]** 이런 자료 만들고 타입지정하라는 소리입니다.
 var food = ['탕후루', 3000, true];
+var add = ['동서녹차', 4000, true, false, true, true, false, true];
