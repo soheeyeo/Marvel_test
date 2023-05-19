@@ -21,3 +21,27 @@ let food :[string, number, boolean] = ['탕후루', 3000, true];
 
 type Arr2 = [string, number, ...boolean[]];
 let add :Arr2 = ['동서녹차', 4000, true, false, true, true, false, true]; 
+
+// 03. **함수에 타입지정을 해보도록 합시다.**
+
+// ```
+// function 함수(){
+
+// }
+// ```
+
+// 1. 이 함수의 첫째 파라미터는 문자,
+
+// 2. 둘째 파라미터는 boolean,
+
+// 3. 셋째 파라미터부터는 숫자 또는 문자가 들어와야합니다.
+
+// 그럼 함수에 파라미터를 어떻게 만들고 타입지정은 또 어떻게 해야할까요?
+
+// 오늘 배운 tuple 타입과 rest parameter를 사용해봅시다.
+
+function 함수(...x :[string, boolean, ...(string | number)[]]){
+	
+}
+
+함수('a', true, 6, 3, '1', 4);
