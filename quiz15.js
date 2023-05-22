@@ -1,0 +1,10 @@
+// 01. **다음 자료의 타입을 지정해보십시오.**
+var obj = {
+    model: 'k5',
+    brand: 'kia',
+    price: 6000,
+    year: 2030,
+    date: '6월',
+    percent: '5%',
+    dealer: '김차장',
+};
