@@ -8,3 +8,12 @@ var obj = {
     percent: '5%',
     dealer: '김차장',
 };
+var font = {
+    'font-size': 10,
+    'secondary': {
+        'font-size': 12,
+        'third': {
+            'font-size': 14
+        }
+    }
+};
