@@ -22,3 +22,16 @@ type Age<T> = T extends [string, ...any] ? T[0] : unknown;
 let age1 :Age<[string, number]>;
 let age2 :Age<[boolean, number]>;
 
+// 02. **함수의 파라미터의 타입을 뽑아주는 기계를 만들어보십시오.**
+
+// ```
+// 타입뽑기<(x :number) => void>//이러면 number가 이 자리에 남음
+// 타입뽑기<(x :string) => void>//이러면 string이 이 자리에 남음
+// ```
+
+// 아무튼 함수의 파라미터타입이 남아야합니다.
+
+type 타입뽑기<T> = T extends (x :infer R) => any ? R : any;
+
+type a = 타입뽑기<(x :number) => void>
+type b = 타입뽑기<(x :string) => void>
