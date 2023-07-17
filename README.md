@@ -113,6 +113,51 @@ function Add(x :number | string){
 }
 ```
 
+#### in 연산자 narrowing
+`if(키값 in object자료형)`으로 narrowing 가능. <br>
+```tsx
+type Fish = { swim: string };
+type Bird = { fly: string };
+
+function Func(animal: Fish | Bird) {
+  if ('swim' in animal) {
+    return animal.swim
+  }
+  return animal.fly
+}
+```
+
+#### instance of narrowing
+class로부터 생성된 object라면 `instanceof`로 narrowing 가능. <br>
+```tsx
+let a = new Date();
+
+if (a instanceof Date){
+  console.log('true');
+}
+```
+
+#### literal type
+object 구분할 일 많을 때 literal type 만들면 narrowing하기 편리. <br>
+```tsx
+type Car = {
+  wheel : '4개', // literal type
+  color : string
+}
+type Bike = {
+  wheel : '2개', // literal type
+  color : string
+}
+
+function Func(x : Car | Bike){
+  if (x.wheel === '4개'){
+    console.log('the car is ' + x.color)
+  } else {
+    console.log('the bike is ' + x.color)
+  }
+}
+```
+
 #### Type Assertion
 type 덮어쓰기. 변수를 특정 type으로 명시하는 것. <br>
 `as` 키워드는 union type같은 복잡한 타입을 하나의 정확한 타입으로 줄이는 역할. <br>
