@@ -321,3 +321,62 @@ let user :Info = {
   address : 'Seoul'
 }
 ```
+
+## Class 안의 Access Modifiers
+#### public
+`public`이 붙은 속성은 자식 object들이 마음대로 사용, 수정 가능. <br>
+`public` 키워드 생략해도 기본값으로 부여. <br>
+```tsx
+class Info {
+  public name: string;
+  constructor(){
+    this.name = 'kim';
+  }
+}
+
+let user1 = new Info();
+user1.name = 'park';  // 가능
+```
+
+#### private
+`private` 붙은 속성들은 오직 `class { }` 안에서만 수정이 가능. <br>
+속성을 외부에서 숨기고 싶을 때 사용. <br>
+```tsx
+class Info {
+  private name: string;
+  constructor(){
+    this.name = 'kim';
+  }
+}
+
+let user1 = new Info();
+user1.name = 'park';  // 에러
+```
+
+#### protected
+`private`과 비슷하지만 extends 된 class 안에서도 사용 가능. <br>
+```tsx
+class Info {
+  protected age = 10;
+}
+
+class NewInfo extends Info {
+  doThis(){
+    this.age = 20; // 가능 
+  }
+}
+```
+
+#### static
+`class { }` 안에 집어넣는 변수, 함수 등은 class로 부터 새로 생성되는 object(instance)에 부여됨. <br>
+class에 직접 변수나 함수 부여하고 싶으면 `static` 키워드 사용. <br>
+```tsx
+class Info {
+  static x = 10;
+  y = 20; // 자식만 사용 가능
+}
+
+let user1 = new Info();
+user1.x // 불가능
+user1.x // 가능
+```
