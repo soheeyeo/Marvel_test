@@ -380,3 +380,49 @@ let user1 = new Info();
 user1.x // 불가능
 user1.x // 가능
 ```
+
+## Generic
+#### Generic 함수
+단일 타입보다 다양한 타입에서 작동하는 컴포넌트를 만들 수 있음. <br>
+함수 return 값의 타입이 애매할 경우 타입스크립트는 타입을 알아서 변경해주지 않음. <br>
+함수에 `<>` 괄호 열어서 타입 파라미터 입력. <br>
+```tsx
+function Func<T>(x: T[]) :T {
+  return x[0];
+}
+
+let a = Func<number>([4,7]); // a :number
+let b = Func<string>(['Lee', 'Kang']); // b :string
+let c = Func(['12', '24']); // 타입 유추. c :number
+```
+
+#### Generic Constraints
+extends 문법 사용해서 타입 제한. <br>
+```tsx
+function AddOne<T>(x: T) {
+  return x + 1; // <T>의 타입이 불확실하므로 에러. 
+}
+
+let a = AddOne<number>(100); // 에러. 
+```
+
+```tsx
+function AddOne<T extends numger>(x: T) {
+  return x + 1;
+}
+
+let a = AddOne<number>(100); // 가능. 
+```
+
+interface 통해 제약 조건 명시 후 extends 사용. <br>
+```tsx
+interface CheckLength {
+  length : number;
+}
+function 함수<T extends CheckLength>(x: T) {
+  return x.length
+}
+
+let a = 함수<string>('hello')  // 가능
+let a = 함수<number>(1234) // 에러
+```
