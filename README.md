@@ -426,3 +426,29 @@ function 함수<T extends CheckLength>(x: T) {
 let a = 함수<string>('hello')  // 가능
 let a = 함수<number>(1234) // 에러
 ```
+
+## Tuple
+#### tuple type
+자료의 위치까지 정확히 지정 가능한 array에 붙일 수 있는 타입. <br>
+```tsx
+let Member :[string, number];
+Member = ['Lee', 26]
+```
+
+#### rest parameter에서 tuple
+rest parameter 타입 지정 시 `tuple` 가능. <br>
+```tsx
+function Member(...x :[string, number] ){
+  console.log(x);
+}
+Member('Lee', 26)  // 가능
+Member('Lee', 26, 31)  // 에러
+Member('Lee', 'Park')  // 에러
+```
+
+#### tuple 안에 옵션 표시
+`tuple` 안에 옵션 표시 가능한데, `?` 옵션 기호는 뒤에서만 붙여야 함. <br>
+```tsx
+let Member :[string, number?] = ['Lee', 26];
+let Member :[string, number?, boolean?] = ['Lee', 26];
+```
