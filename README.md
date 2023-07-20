@@ -452,3 +452,74 @@ Member('Lee', 'Park')  // 에러
 let Member :[string, number?] = ['Lee', 26];
 let Member :[string, number?, boolean?] = ['Lee', 26];
 ```
+
+## Declare & Ambient module
+#### Declare
+`declare`으로 선언한 변수가 이미 존재하여 참조할 수 있다는 것을 컴파일러에게 알려줌. <br>
+이미 정의된 함수나 변수 재정의 가능. <br>
+```tsx
+(data.js)
+
+var a = 50;
+```
+
+```tsx
+(index.ts)
+
+declare let a :number;
+console.log(a + 1); // 가능. 
+```
+
+#### Ambient Module
+전역으로 쓸 수 있는 파일. <br>
+같은 폴더의 ts 파일에서 import, export 없이 변수나 타입 정의 등을 가져다 쓸 수 있음. <br> 
+```tsx
+// (data.ts)
+
+type Color = string;
+let car :Color = 'red';
+```
+
+```tsx
+// (index.ts)
+
+console.log(car) // 가능
+let newCar :Color = 'blue'; // 가능
+```
+
+import, export 키워드가 있으면 자동으로 로컬 모듈. <br>
+TypeScript 파일이 다른 파일에 영향끼치는 것을 막고 싶으면 export 키워드 추가. <br>
+```tsx
+// (data.ts)
+export {};
+type Color = string;
+let car :Color = 'red';
+```
+
+```tsx
+// (index.ts)
+
+console.log(car) // 불가능
+let newCar :Color = 'blue'; // 불가능
+```
+
+#### Declare Global
+TypeScript에서 import, export 키워드가 없으면 글로벌 모듈, 있으면 로컬 모듈. <br>
+로컬 모듈에서 전역으로 변수 만들고 싶다면 `declare global{}` 사용. <br>
+```tsx
+// (data.ts)
+
+let a = 5;
+declare global {
+  type Color = string; // 모든 파일에서 Color 타입 사용 가능
+}
+
+export {}
+```
+
+```tsx
+// (index.ts)
+
+console.log(a + 1); // 불가능
+let myCar :Color = 'pink'; // 가능
+```
