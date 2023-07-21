@@ -523,3 +523,37 @@ export {}
 console.log(a + 1); // 불가능
 let myCar :Color = 'pink'; // 가능
 ```
+
+## Implements
+class가 특정 interface를 준수하는지 확인. <br> 
+class가 interface의 속성을 모두 갖고 있지 않으면 에러. <br>
+```tsx
+interface Animal {
+  name : string,
+  age : number
+}
+
+class Pet implements Animal { // Pet class가 Animal 속성을 가지고 있는지 확인 
+  name : string;
+  age : number = 5;
+  constructor(a :string){
+    this.name = a
+  }
+}
+let dog = new Pet('Jindo');
+```
+
+`implements`는 오직 타입 체크용, 안의 값을 자동으로 바꿔주지 않음. <br>
+타입으로 지정한 메서드 모두 내부에서 재정의 필요. <br>
+```tsx
+interface Animal {
+  name : string,
+  addAge : (age :number) => number;
+}
+
+class Pet implements Animal { 
+  name; // any 타입 
+  addAge (a){   // a 파라미터는 any 타입
+    return a + 1;
+  }
+```
