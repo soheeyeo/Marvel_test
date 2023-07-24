@@ -574,7 +574,42 @@ let obj :StringOnly = {
 
 ```tsx
 interface StringOnly {
-  age : number,   ///가능
+  age : number,   // 가능
   [key: string]: string | number, // string으로 들어오는 key 값에 할당되는 value는 string 또는 number
+}
+```
+
+## Keyof & Mapped Types
+#### Keyof Operator
+object 타입에서 `keyof`를 사용하면 object 타입이 가지고 있는 모든 key값을 union type으로 합쳐서 내보냄. <br>
+object의 key를 뽑아 새로운 타입을 만들고 싶을 때 사용. <br>
+```tsx
+interface Pet {
+  age: number;
+  name: string;
+}
+
+type PetKeys = keyof Pet;   // 'age'|'name' 타입 
+let a :PetKeys = 'age'; // 가능
+let b :PetKeys = 'ageeee'; // 불가능
+```
+
+#### Mapped Types
+기존에 정의되어 있는 타입을 새로운 타입으로 변환. <br>
+```tsx
+type Pet {
+  age: boolean,
+  name: boolean,
+}
+
+type TypeChanger<PetType> = {
+  [key in keyof PetType]: string; // 속성명은 그대로지만 전부 string 타입 
+}
+
+type NewType = TypeChanger<Pet>;
+
+let obj :NewType = {
+  age: '5',
+  name: 'Jindo',
 }
 ```
