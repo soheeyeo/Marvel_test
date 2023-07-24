@@ -557,3 +557,24 @@ class Pet implements Animal {
     return a + 1;
   }
 ```
+
+## Object Index Signatures
+object 타입에서 각 속성의 타입 한 번에 지정해줌. <br>
+```tsx
+interface StringOnly {
+  [key: string]: string // 모든 string으로 들어오는 key 값에 할당되는 value는 string
+}
+
+let obj :StringOnly = {
+  name : 'Kim',
+  age : '20',
+  location : 'Seoul'
+}
+```
+
+```tsx
+interface StringOnly {
+  age : number,   ///가능
+  [key: string]: string | number, // string으로 들어오는 key 값에 할당되는 value는 string 또는 number
+}
+```
